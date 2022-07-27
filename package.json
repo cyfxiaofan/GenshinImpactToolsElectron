@@ -1,0 +1,63 @@
+{
+    "name": "desktop",
+    "productName": "Genshin_Impact_Tools_Setup-1.0.0-win-64",
+    "version": "1.0.0",
+    "authors": [{
+        "name": "xiaofan",
+        "email": "1182900548@qq.com"
+    }],
+    "description": "a toolbox for the original game",
+    "main": "main.js",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^19.0.4",
+        "electron-builder": "^23.1.0"
+    },
+    "scripts": {
+        "start": "electron .",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder",
+        "build": "electron-builder --win --x64"
+    },
+    "dependencies": {},
+    "build": {
+        "productName": "Genshin_Impact_Tools_Setup-1.0.0-win-64",
+        "appId": "com.ystools.app",
+        "electronVersion": "19.0.4",
+        "copyright": "版权所有信息",
+        "asar": false,
+        "directories": {
+            "output": "dist"
+        },
+        "win": {
+            "icon": "./logo.ico",
+            "requestedExecutionLevel": "highestAvailable",
+            "target": [{
+                "target": "nsis",
+                "arch": [
+                    "x64"
+                ]
+            }]
+        },
+        "linux": {
+            "target": [{
+                "target": "deb",
+                "arch": ["x64"]
+            }],
+            "icon": "../src/assets/app/desktop.png",
+            "maintainer": "主要贡献者",
+            "description": "基于4.1.4配置"
+        },
+        "nsis": {
+            "oneClick": false,
+            "allowElevation": true,
+            "allowToChangeInstallationDirectory": true,
+            "installerIcon": "./logo.ico",
+            "uninstallerIcon": "./logo.ico",
+            "installerHeaderIcon": "./logo.ico",
+            "createDesktopShortcut": true,
+            "createStartMenuShortcut": true,
+            "shortcutName": "原神工具箱"
+        }
+    }
+}
